@@ -1,23 +1,23 @@
 #include<iostream>
 #include<algorithm>
 #include<vector>
-#include<string>
-#include<map>
-#define lop(n) for (int i = 0; i < n; i++)
+
 using namespace std;
 int main()
     {
-       int t; cin>>t;
+        int t; 
+        cin>>t;
+        
        while(t--)
        {
            int n,k,x;
            cin>>n>>k>>x;
  
            vector<int> V(n);
- 
            for(int i{0};i<n;++i)
             cin>>V[i];
- 
+
+           
            sort(V.begin(),V.end());
  
            long long sum_bob{0},sum{0};
@@ -47,6 +47,7 @@ int main()
                     vidx2--;
                     ans=max(ans,sum+sum_bob);
                 }
+           
                 cout<<ans<<'\n';
        }
     return 0;
