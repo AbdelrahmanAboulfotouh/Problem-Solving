@@ -3,7 +3,7 @@
 #include <bits/stdc++.h> 
 using namespace std; 
   
-// Function to return gcd of a and b 
+// Function to return gcd of a and b iterative
 int gcd(int a, int b) 
 { 
     // Find Minimum of a and b 
@@ -18,6 +18,14 @@ int gcd(int a, int b)
     // Return gcd of a and b 
     return result; 
 } 
+
+// Function to return gcd of a and b recursive
+int gcd(int a, int b)
+{
+    if (b == 0) return a;
+    return gcd (b, a%b);   
+}
+
   
 // Driver code 
 int main() 
