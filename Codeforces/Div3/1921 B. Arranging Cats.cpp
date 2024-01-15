@@ -1,5 +1,6 @@
 //https://codeforces.com/contest/1921/problem/B
 #include<iostream>
+#include<algorithm>
 using namespace std;
 
 int main()
