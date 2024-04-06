@@ -1,0 +1,46 @@
+//https://codeforces.com/contest/1946/problem/B
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+ll get_mod(ll &X,ll &Y)
+{
+    return ((X%Y)+Y)%Y;
+}
+
+
+int main()
+{
+   int t;cin>>t;
+    while (t--)
+    {
+        int n,k;cin>>n>>k;
+        vector<int>V(n);
+        ll sum{0};
+        ll postive_sum{0};
+        ll MAX=-INT_MAX;
+        for(auto  &i:V)
+        {
+            cin>>i;
+            sum+=i;
+            postive_sum+=i;
+            if(postive_sum<0)
+                postive_sum = 0;
+            MAX = max(MAX,postive_sum);
+
+        }
+        ll MOD = 1e9 +7;
+        while (k--)
+        {
+            sum+=MAX;
+            sum = get_mod(sum,MOD);
+            MAX+=MAX;
+            MAX  = get_mod(MAX,MOD);
+
+
+        }
+
+
+    cout<<sum<<"\n";
+    }
+          return 0;
+}
