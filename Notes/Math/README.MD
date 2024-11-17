@@ -1,7 +1,7 @@
 # Number Thoery 
 ### Divisors of a given number
 
-```
+```cpp
 vector<long long >Divisors(long long n)
 {
     vector<long long>ans;
