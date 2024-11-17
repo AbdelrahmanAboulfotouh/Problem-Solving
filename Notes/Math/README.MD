@@ -1,6 +1,6 @@
 # Number Thoery 
 ### Divisors of a given number
-
+>Note the number of diversors is even most of time , but odd only with number which sqrt is integer like 4 .
 ```cpp
 vector<long long >Divisors(long long n)
 {
