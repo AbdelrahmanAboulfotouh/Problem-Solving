@@ -1,6 +1,7 @@
 # Number Thoery 
 ### Divisors of a given number
->vector<long long >Divisors(long long n)
+'''
+vector<long long >Divisors(long long n)
 {
     vector<long long>ans;
     for(long long i {1};i*i <=n;++i)
@@ -14,4 +15,5 @@
         }
     }
     return ans;
->}
+}
+'''
