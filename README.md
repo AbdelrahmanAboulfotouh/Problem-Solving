@@ -18,18 +18,14 @@ Problem-Solving/
 ├── Codeforces/
 │   ├── Div2/
 │   ├── Div3/
-│   ├── Educational/
+│   ├── Div4/
 │   └── Notes.md
 │
 ├── UVa/
-│   ├── Volume1/
-│   ├── Volume2/
-│   └── Notes.md
 │
+├── Spoj/
+|
 ├── AtCoder/
-│   ├── Beginner/
-│   ├── Regular/
-│   └── Notes.md
 │
 ├── CSES/
 │   ├── Introductory/
@@ -45,34 +41,25 @@ Problem-Solving/
 
 ## Platforms Covered
 
-### 1. **LeetCode**
+### **LeetCode**
    - **Easy**: Solutions to beginner-friendly problems that focus on basic data structures and algorithms.
    - **Medium**: More challenging problems that require a deeper understanding of algorithms and problem-solving techniques.
    - **Hard**: Complex problems that often involve advanced algorithms, dynamic programming, or tricky optimizations.
    - **Notes.md**: General notes on common patterns, tips, and tricks specific to LeetCode problems.
 
-### 2. **Codeforces**
+### **Codeforces**
    - **Div2**: Solutions to problems from Codeforces Div2 contests, which are typically aimed at intermediate-level programmers.
    - **Div3**: Solutions to problems from Div3 contests, which are generally easier and more accessible.
    - **Educational**: Solutions to problems from educational rounds, which often focus on teaching specific concepts or techniques.
    - **Notes.md**: Notes on competitive programming strategies, common pitfalls, and techniques used in Codeforces contests.
 
-### 3. **UVa (Universidad de Valladolid)**
-   - **Volume1**: Solutions to problems from the first volume of the UVa Online Judge, covering basic topics.
-   - **Volume2**: Solutions to problems from the second volume, which include more advanced topics.
-   - **Notes.md**: Notes on problem-solving approaches specific to UVa problems, including input/output handling and common algorithms.
 
-### 4. **AtCoder**
-   - **Beginner**: Solutions to problems from AtCoder Beginner Contests (ABC), which are designed for those new to competitive programming.
-   - **Regular**: Solutions to problems from regular AtCoder contests, which are more challenging and cover a wider range of topics.
-   - **Notes.md**: Notes on AtCoder-specific problem-solving techniques and common patterns.
-
-### 5. **CSES (Code Submission Evaluation System)**
+###  **CSES (Code Submission Evaluation System)**
    - **Introductory**: Solutions to introductory problems that cover basic data structures and algorithms.
    - **Sorting and Searching**: Solutions to problems focused on sorting and searching algorithms.
    - **Notes.md**: Notes on CSES problem-solving strategies, including common algorithms and data structures used.
 
-### 6. **General Notes**
+###  **General Notes**
    - **Data-Structures.md**: Detailed notes on various data structures, including arrays, linked lists, trees, graphs, and more.
    - **Algorithms.md**: Comprehensive notes on algorithms, including sorting, searching, dynamic programming, and graph algorithms.
    - **Problem-Solving-Techniques.md**: A collection of problem-solving techniques, such as divide and conquer, greedy algorithms, and backtracking.
