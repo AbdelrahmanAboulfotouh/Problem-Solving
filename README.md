@@ -21,16 +21,14 @@ Problem-Solving/
 │   ├── Div4/
 │   └── Notes.md
 │
-├── UVa/
-│
-├── Spoj/
-|
-├── AtCoder/
-│
 ├── CSES/
 │   ├── Introductory/
 │   ├── Sorting and Searching/
 │   └── Notes.md
+|
+├── UVa
+├── Spoj
+├── AtCoder
 │
 └── General-Notes/
     ├── Data-Structures.md
