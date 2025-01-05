@@ -18,17 +18,14 @@ Problem-Solving/
 ├── Codeforces/
 │   ├── Div2/
 │   ├── Div3/
-│   ├── Educational/
+│   ├── Div4/
 │   └── Notes.md
 │
 ├── UVa/
-│   ├── Volume1/
-│   ├── Volume2/
-│   └── Notes.md
+│   ├── problem solutions/
 │
 ├── AtCoder/
 │   ├── Beginner/
-│   ├── Regular/
 │   └── Notes.md
 │
 ├── CSES/
@@ -36,6 +33,9 @@ Problem-Solving/
 │   ├── Sorting and Searching/
 │   └── Notes.md
 │
+│
+├── spoj/
+│  
 └── General-Notes/
     ├── Data-Structures.md
     ├── Algorithms.md
@@ -54,17 +54,16 @@ Problem-Solving/
 ### 2. **Codeforces**
    - **Div2**: Solutions to problems from Codeforces Div2 contests, which are typically aimed at intermediate-level programmers.
    - **Div3**: Solutions to problems from Div3 contests, which are generally easier and more accessible.
-   - **Educational**: Solutions to problems from educational rounds, which often focus on teaching specific concepts or techniques.
+   - **Div4**: Solutions to problems from Div4 contests, which are generally easier and more accessible.
    - **Notes.md**: Notes on competitive programming strategies, common pitfalls, and techniques used in Codeforces contests.
 
 ### 3. **UVa (Universidad de Valladolid)**
-   - **Volume1**: Solutions to problems from the first volume of the UVa Online Judge, covering basic topics.
-   - **Volume2**: Solutions to problems from the second volume, which include more advanced topics.
-   - **Notes.md**: Notes on problem-solving approaches specific to UVa problems, including input/output handling and common algorithms.
+   -  Solutions to problems from the first volume of the UVa Online Judge, covering basic topics.
+### 3. **Spoj **
+   -  Solutions to problems from the first volume of the spoj Online Judge, covering basic topics.
 
 ### 4. **AtCoder**
    - **Beginner**: Solutions to problems from AtCoder Beginner Contests (ABC), which are designed for those new to competitive programming.
-   - **Regular**: Solutions to problems from regular AtCoder contests, which are more challenging and cover a wider range of topics.
    - **Notes.md**: Notes on AtCoder-specific problem-solving techniques and common patterns.
 
 ### 5. **CSES (Code Submission Evaluation System)**
@@ -102,17 +101,7 @@ Problem-solving is a fundamental skill in software engineering and computer scie
 
 Happy coding, and may your problem-solving skills continue to grow!
 
----
-
-**Note**: This repository is a work in progress, and I will continue to add more solutions, notes, and resources over time. Stay tuned for updates!
-
----
 
 **Connect with me**:
-- [GitHub](https://github.com/yourusername)
-- [LinkedIn](https://www.linkedin.com/in/yourusername)
-- [Twitter](https://twitter.com/yourusername)
+- [LinkedIn]([https://www.linkedin.com/in/yourusername](https://www.linkedin.com/in/abdelrahman-aboulfotouh/))
 
----
-
-**License**: This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
