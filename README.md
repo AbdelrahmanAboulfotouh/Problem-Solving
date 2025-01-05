@@ -92,11 +92,13 @@ Happy coding, and may your problem-solving skills continue to grow!
 **Note**: This repository is a work in progress, and I will continue to add more solutions, notes, and resources over time. Stay tuned for updates!
 
 ---
+**Profiles**
+- [Leet code](https://leetcode.com/u/Aboulfotouh/)
+- [Codeforces](https://codeforces.com/profile/Abulfotouh)
+- [Vjudge](https://vjudge.net/user/Aboelfotouh7D1)
 
 **Connect with me**:
-- [GitHub](https://github.com/yourusername)
-- [LinkedIn](https://www.linkedin.com/in/yourusername)
-- [Twitter](https://twitter.com/yourusername)
+- [LinkedIn](https://www.linkedin.com/in/abdelrahman-aboulfotouh)
 
 ---
 
