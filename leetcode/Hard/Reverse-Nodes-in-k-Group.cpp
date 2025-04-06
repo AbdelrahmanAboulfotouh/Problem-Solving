@@ -10,7 +10,8 @@
  */
 class Solution {
 public:
-  ListNode* reverseList(ListNode* head, int  k){
+  bool reverseList(ListNode* head, int  k,ListNode** C, ListNode** Nhead)
+  {
     ListNode* pre{ };
     ListNode* cur = head;
        while(cur and k--)
@@ -21,23 +22,33 @@ public:
         cur = Next;
 
        }
-       return pre;
+        *C = cur;
+
+       if(k<=0)
+       {
+        *Nhead = pre;
+        *C = cur;
+        return true;
+        }    
+    return false;
     }
   
     ListNode* reverseKGroup(ListNode* head, int k) 
     {
-        int c{1};
+        int total_re{};
+        for(auto cur = head;cur;cur=cur->next)
+        {
+            ++total_re;
+        }
+        total_re/=k;
         ListNode* dummy = new ListNode(0);
         ListNode* Last = dummy;
         ListNode*  s = head;
-        for(auto cur = head ; cur ; cur=cur->next )
+        ListNode* Nhead = head;
+        ListNode* cur = head;
+        while(total_re-- and reverseList(s,k,&cur,&Nhead))
         {
-            if(c == k)
-            {
-                cur = cur->next;
-                c = 1;
-                ListNode* Nhead = reverseList(s,k);
-                if(!dummy->next)
+             if(!dummy->next)
                     dummy->next = Nhead;
                     if(s)
                         s->next = cur;
@@ -45,10 +56,6 @@ public:
                         Last->next = Nhead;
                 Last = s;
                 s = cur;
-            }
-            ++c;
-            if(!cur)
-            break;
         }
         if(Last)
             Last->next = s;
