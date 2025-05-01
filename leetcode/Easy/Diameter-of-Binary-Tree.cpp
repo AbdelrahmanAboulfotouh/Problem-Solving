@@ -11,19 +11,23 @@
  */
 class Solution {
 public:
+int max_so_far = 0 ;
 int Maxdepth(TreeNode* root)
 {
     if(!root)
         return 0;
     int left_depth = Maxdepth(root->left);
     int right_depth = Maxdepth(root->right);
+
+    max_so_far = max(max_so_far, left_depth  + right_depth);
     return max(left_depth, right_depth)+1;
 }
-    int diameterOfBinaryTree(TreeNode* root)
-    {
-        if(!root)
-            return 0 ;
-        auto depth = Maxdepth(root->left) + Maxdepth(root->right);  
-        return max({depth,diameterOfBinaryTree(root->left),diameterOfBinaryTree(root->right)});  
-    }
+        int diameterOfBinaryTree(TreeNode* root )
+    
+            {
+                    
+                Maxdepth(root);
+                return max_so_far  ;
+                
+            }
 };
