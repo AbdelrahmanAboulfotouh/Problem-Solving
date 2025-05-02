@@ -15,8 +15,8 @@ public:
         if(!root)
             return { };
             vector<vector<int>> ans;
-            queue<TreeNode*> nodes;
-            nodes.push(root);
+            deque<TreeNode*> nodes;
+            nodes.push_back(root);
            bool dirction = false;            
             while (!nodes.empty())
             {
@@ -24,16 +24,39 @@ public:
                 vector<int>sub_level;
                 while (sz--)
                 {
-                    auto cur = nodes.front();
-                    nodes.pop();
+
+                    TreeNode* cur ;
+                    if(dirction)
+                        {cur = nodes.back();
+                        nodes.pop_back();}
+
+                    else
+                    {
+                        cur = nodes.front();
+                        nodes.pop_front();
+                    }
+
                     sub_level.push_back(cur->val);
-                    if(cur->left)
-                        nodes.push(cur->left);
-                    if(cur->right)
-                        nodes.push(cur->right);
+                    if(!dirction)
+                       { if(cur->left)
+                            nodes.push_back(cur->left);
+                        if(cur->right)
+                            nodes.push_back(cur->right);
+                       }
+                    else
+                    {
+                    
+                        if(cur->right)
+                            nodes.push_front(cur->right);
+                        if(cur->left)
+                            nodes.push_front(cur->left);
+
+                    }
+                    
+
+                                   
                 }
-                if(dirction)
-                        reverse(sub_level.begin(), sub_level.end());
+                
 
                 dirction = ! dirction;
 
