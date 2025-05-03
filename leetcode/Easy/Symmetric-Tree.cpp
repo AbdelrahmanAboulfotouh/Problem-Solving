@@ -11,20 +11,48 @@
  */
 class Solution {
 public:
-    bool check_symmetric(TreeNode* first, TreeNode* second)
-    {
-        if(!first and !second)
-            return true;
-        if((!first and second) or (first and !second) or (first and second and first->val != second->val))
-            return false;
-        
-            return  check_symmetric(first->right, second->left) and check_symmetric(first->left, second->right); 
-    }
-   bool isSymmetric(TreeNode* root)
-    {
-        if(!root)
-            return false;
-        return  check_symmetric(root->left , root->right);
+   string parenthesize(TreeNode *root, bool left_first = true) {	// O(n)
+		if (!root)
+			return "()";
 
-    }
+		string repr = "(" + to_string(root->val);
+
+		if (left_first) {
+			if (left)
+				repr += parenthesize(root->left, left_first);
+			else
+				repr += "()";	// null: no child
+
+			if (right)
+				repr += parenthesize(root->right, left_first);
+			else
+				repr += "()";	// null: no child
+		} else {
+			if (right)
+				repr += parenthesize(root->right, left_first);
+			else
+				repr += "()";	// null: no child
+
+			if (left)
+				repr += parenthesize(root->left, left_first);
+			else
+				repr += "()";	// null: no child
+		}
+		repr += ")";
+
+		return repr;
+	}
+
+	bool isSymmetric(TreeNode *root) {
+		if (!root)
+			return false;
+
+		if (!root->left && !root->right)
+			return true;
+
+		if (!root->left && root->right || root->left && !root->right)
+			return false;
+
+		return parenthesize(root->left, true) == parenthesize(root->right, false);
+	}
 };
