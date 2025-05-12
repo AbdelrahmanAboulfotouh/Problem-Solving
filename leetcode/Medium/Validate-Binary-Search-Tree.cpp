@@ -12,30 +12,27 @@
  */
 class Solution {
 public:
-    int get_max(TreeNode* root) {
-        if (!root)
-            return INT_MIN;
-        int left_max = get_max(root->left);
-        int right_max = get_max(root->right);
-        int mx = max(left_max, right_max);
-        return max(root->val, mx);
-    }
-    int get_min(TreeNode* root) {
-        if (!root)
-            return INT_MAX;
-        int left_min = get_min(root->left);
-        int right_min = get_min(root->right);
-        int mn = min(left_min, right_min);
-        return min(root->val, mn);
-    }
- bool isValidBST(TreeNode* root) {
+vector<int>inorder;
+void traverse(TreeNode* root)
+{
+    if(!root)
+        return ;
+    traverse(root->left);
+    inorder.push_back(root->val);  
+    traverse(root->right);
+}
+  
+ bool isValidBST(TreeNode* root, int upper = INT_MIN, int lower = INT_MAX)
+  {
 
     if (!root)
         return true;
-   
-    if((root->right and get_min(root->right) <= root->val )or (root->left and get_max(root->left) >= root->val))
-        return false;
-    return isValidBST(root->left) and isValidBST(root->right);
+      traverse(root);
+      for(int i{0};i<inorder.size()-1;++i)
+      {
+        if(inorder[i] >= inorder[i+1])
+            return false;
+      }
+      return true;
 }
-}
-;
+};
