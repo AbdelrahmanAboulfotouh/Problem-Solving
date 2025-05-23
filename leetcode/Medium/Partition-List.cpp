@@ -19,16 +19,16 @@ public:
 
         for(auto cur = head; cur ;cur = cur->next)
         {
-            ListNode* item = new ListNode(cur->val);
-            if(item->val <  x)
+          //  ListNode* item = new ListNode(cur->val);
+            if(cur->val <  x)
             {
                 if(!low_head)
                 {
-                    low_head = low_cur = item; 
+                    low_head = low_cur = cur; 
                 }
                 else
                 {
-                    low_cur->next = item;
+                    low_cur->next = cur;
                     low_cur = low_cur->next;
                 }
             }           
@@ -36,16 +36,18 @@ public:
             {
                  if(!high_head)
                  {
-                    high_head = high_cur = item;
+                    high_head = high_cur = cur;
                  }
                  else
                  {
-                    high_cur->next = item;
+                    high_cur->next = cur;
                     high_cur = high_cur->next;
                  }
               
             }
         }
+        if(high_cur)
+            high_cur->next = nullptr;
         if(low_cur)
             {
             low_cur->next = high_head;
