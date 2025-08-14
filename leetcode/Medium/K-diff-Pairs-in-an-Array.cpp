@@ -1,32 +1,23 @@
 class Solution {
 public:
-struct pair_hash {
-    size_t operator()(const std::pair<int, int>& p) const {
-        return std::hash<int>()(p.first) ^ (std::hash<int>()(p.second) << 1);
-    }
-};
+
     int findPairs(vector<int>& nums, int k) 
     {
-        sort(nums.begin(),nums.end());
-        unordered_map<pair<int,int>,bool,pair_hash>visited;
         int pairs{0};
-        for(int i{0};i<nums.size()-1;++i)
+        unordered_map<int,int>fr;
+        for(int i{0};i<nums.size();++i)
+            ++fr[nums[i]];
+        for( auto &item : fr)
         {
-            for(int j = i+1;j<nums.size();++j)
+            if(k > 0)
             {
-                int difference = nums[j] - nums[i] ;
-                if(difference > k)
-                    break;
-                else if(difference < k)
-                    continue;
-
-                pair<int,int>p = {nums[i],nums[j]};
-                if(visited.find(p) == visited.end())
-                {
-                        ++pairs;
-                        visited[p] = true;
-
-                }
+                if(fr.find((item.first + k)) != fr.end())
+                    ++pairs;
+            }
+            else if(k == 0)
+            {
+                if(item.second > 1)
+                    ++pairs;
             }
         }
         return pairs;
