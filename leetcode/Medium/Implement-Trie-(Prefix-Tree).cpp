@@ -1,66 +1,42 @@
-class TrieNode{
-        public:
-    static const int size = 26;
-    TrieNode* array[26];
-    bool is_leaf{};
-    TrieNode()
-    {
-            memset(array,0,sizeof(array));
-            is_leaf = false;
-    }
-};
 class Trie {
-   TrieNode* Node;
-public:
-    Trie() {
-     Node = new TrieNode();
-    }
+    public:
+        vector<Trie*>childs;
+        bool is_leaf;
+     Trie() :childs(26,nullptr),is_leaf(false){}
     
-   void insert(string word) 
-    {
-        auto cur = Node;
-        for(auto &c:word)
+     void insert(string  word, int idx = 0) 
+     {
+        if(idx == word.size())
+            is_leaf = true;
+        else
         {
-            int idx = c - 'a';
-            if(cur->array[idx] == nullptr)
-                cur->array[idx] = new TrieNode();
-            cur = cur->array[idx];
+            int cur = word[idx] - 'a';
+            if(!childs[cur])
+                childs[cur] = new Trie();
+            childs[cur]->insert(word,  idx+1);
+
         }
-        cur->is_leaf = true;
-	
-	}
-    
-    bool search(string word)
-    {
-        auto cur = Node;
-      for(auto &c :word)
-        {
-            int idx = c - 'a';
-            if(cur->array[idx] == nullptr)
-                return false;
-            cur = cur->array[idx];
-        }    
-        return cur->is_leaf;
+        
     }
     
-    bool startsWith(string prefix) {
-              auto cur = Node;
-        for(auto &c :prefix)
-        {
-            int idx = c - 'a';
-            if(cur->array[idx] == nullptr)
-                return false;
-            cur = cur->array[idx];
-        }    
-        return true;
+     bool search(string  word, int idx = 0) {
+        if(idx == word.size())
+            return is_leaf;
+        int cur  = word[idx] - 'a';
+        if(!childs[cur])
+            return false;
+       return  childs[cur]->search(word, idx +1 );
+         
     }
+    
+     bool startsWith(string  prefix , int idx = 0) {
 
+         if(idx == prefix.size())
+            return true;
+        int cur  = prefix[idx] - 'a';
+        if(!childs[cur])
+            return false;
+        return childs[cur]->startsWith(prefix, idx +1 );
+        
+    }
 };
-
-/**
- * Your Trie object will be instantiated and called as such:
- * Trie* obj = new Trie();
- * obj->insert(word);
- * bool param_2 = obj->search(word);
- * bool param_3 = obj->startsWith(prefix);
- */
