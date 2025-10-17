@@ -34,12 +34,13 @@ void DFS_on_grid(int x, int y, vector<vector<int>>& grid,vector<vector<bool>>& v
             for(int j{0};j<grid[0].size();++j)
             {
                 bool is_closed_island = true;
-                bool inside = false;
                 if(grid[i][j] == 0 and visited[i][j] == false)
-                        inside = true;
+               {
                 DFS_on_grid(i,j,grid,visited,is_closed_island);
-                if(is_closed_island and inside)
+                if(is_closed_island )
                     ++closed_island_counter;
+                    
+               }
             }
         }
         return closed_island_counter;
