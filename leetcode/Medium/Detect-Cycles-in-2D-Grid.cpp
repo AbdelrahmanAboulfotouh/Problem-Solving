@@ -22,10 +22,10 @@ bool DFS_on_grid(int nx, int ny,int px, int py,  vector<vector<char>>& grid, vec
     {
         int x = nx + dx[dir];
         int y = ny + dy[dir];
-        if(!is_valid(x,y,grid) or grid[x][y] != target)
-                    continue;
-        if(visited[x][y] and (x !=px or y !=py) and grid[x][y] == target)
+        
+        if(is_valid(x,y,grid) and visited[x][y] and (x !=px or y !=py) and grid[x][y] == target)
             return true;
+            
         if(DFS_on_grid(x, y,nx,ny, grid, visited,target ) ) 
             return true;
     }
