@@ -18,40 +18,42 @@
 18        for(int i{0}; i<s.size();++i)
 19        {
 20            if(isVowel(s[i]))
-21               { ++freq[s[i]];
-22               if(firstPos.find(s[i]) == firstPos.end() )
-23                firstPos[s[i]] =i;
-24               }
-25        }
-26        vector<pair<char,int>> sortedFreq (freq.begin(),freq.end());
-27       
-28        sort(sortedFreq.begin(),sortedFreq.end(),[&](auto &a , auto&b)
-29        {
-30            if(a.second != b.second)
-31                return a.second > b.second;
-32            return firstPos[a.first] <  firstPos[b.first];
-33        });
-34        queue<char>q;
-35        for(int i{0};i<sortedFreq.size();++i)
-36        {
-37            int fr = sortedFreq[i].second;
-38            char c = sortedFreq[i].first;
-39            while(fr)
-40            {
-41                q.push(c);
-42                --fr;
-43            }
-44        }
-45        for(auto &c:s)
-46        {
-47            if(isVowel(c))
-48            {
-49                ans+=q.front();
-50                q.pop();
-51            }
-52            else
-53                ans+=c;
-54        }
-55        return ans;
-56    }
-57};
+21               {
+22                 ++freq[s[i]];
+23               if(firstPos.find(s[i]) == firstPos.end() )
+24                firstPos[s[i]] =i;
+25               }
+26        }
+27        vector<pair<char,int>> sortedFreq (freq.begin(),freq.end());
+28       
+29        sort(sortedFreq.begin(),sortedFreq.end(),[&](auto &a , auto&b)
+30        {
+31            if(a.second != b.second)
+32                return a.second > b.second;
+33            return firstPos[a.first] <  firstPos[b.first];
+34        });
+35        
+36        queue<char>q;
+37        for(int i{0};i<sortedFreq.size();++i)
+38        {
+39            int fr = sortedFreq[i].second;
+40            char c = sortedFreq[i].first;
+41            while(fr)
+42            {
+43                q.push(c);
+44                --fr;
+45            }
+46        }
+47        for(auto &c:s)
+48        {
+49            if(isVowel(c))
+50            {
+51                ans+=q.front();
+52                q.pop();
+53            }
+54            else
+55                ans+=c;
+56        }
+57        return ans;
+58    }
+59};
